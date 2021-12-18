@@ -7,7 +7,6 @@ class User(AbstractUser):
     phone_no = models.CharField(max_length = 10)
     is_doctor = models.BooleanField('doctor status', default=False)
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'is_doctor']
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
@@ -15,7 +14,7 @@ class Doctor(models.Model):
     department = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"Dr. {self.user.first_name}"
+        return f"Dr. {self.user.username}"
 
 class Patient(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
