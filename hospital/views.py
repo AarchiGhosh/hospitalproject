@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from hospital.models import User
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView
 from hospital.forms import PatientSignUpForm, DoctorSignUpForm
 
