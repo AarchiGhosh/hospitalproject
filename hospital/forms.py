@@ -35,8 +35,8 @@ class PatientSignUpForm(UserCreationForm):
         user = super().save(commit=False)
         user.is_doctor = False
         user.save()
-        patient = Patient.objects.create(user=user)
-        patient.doctor = self.cleaned_data.get('doctor')
+        doctor = self.cleaned_data.get('doctor')
+        patient = Patient.objects.create(user=user, doctor=doctor)
         return user
 
 class PatientInfoForm:

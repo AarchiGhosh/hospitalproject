@@ -28,7 +28,7 @@
   
   <section data-bs-version="5.1" class="menu menu2 cid-sRXfht7C6Q" once="menu" id="menu2-6">
     
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg" style="background-color: #b9d3d0;">
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
@@ -47,11 +47,11 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'about' %}">
                             About us</a></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">
                             Services</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Contacts</a>
+                    <li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'contact' %}">Contacts</a>
                     </li></ul>
                 
                 
@@ -71,7 +71,7 @@
             <div class="col-12 col-lg-6">
                 <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>{{ header }}</strong><br><strong>System</strong></h1>
                 
-                <p class="mbr-text mbr-fonts-style display-7">For fast prototyping and small customers' projects.</p>
+                <p class="mbr-text mbr-fonts-style display-5">Your Health, Our Responsibilty.</p>
                 
             </div>
         </div>
@@ -91,12 +91,12 @@
                         <div class="col-12 col-md-7">
                             <div class="text-wrapper">
                                 <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">
-                                    Scheduling System</h6>
+                                    For New Patients</h6>
                                 <h5 class="card-title mbr-fonts-style display-5">
-                                    <strong>Scheduling System</strong></h5>
+                                    <strong>Patient Regristration</strong></h5>
                                 <p class="mbr-text mbr-fonts-style mb-5 display-4">You don't have to code when you create your own site. Select one of available themes in the Mobirise sitebuilder.</p>
                                 <div class="mbr-section-btn">
-                                    <a href="https://mobiri.se" class="btn btn-warning display-4">Learn more</a>
+                                    <a href="{% url 'patient_signup' %}" class="btn btn-warning display-4">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -113,12 +113,12 @@
                     <div class="row">
                         <div class="col-12 col-md-7">
                             <div class="text-wrapper">
-                                <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">Patient Details</h6>
+                                <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">For registered Users</h6>
                                 <h5 class="card-title mbr-fonts-style display-5">
                                     <strong>Patient Information</strong></h5>
                                 <p class="mbr-text mbr-fonts-style mb-5 display-4">Select the theme that suits you. Each theme in the Mobirise website building software contains a set of unique blocks.</p>
                                 <div class="mbr-section-btn">
-                                    <a href="https://mobiri.se" class="btn btn-warning display-4">Learn more</a>
+                                    <a href="{% url 'login' %}" class="btn btn-warning display-4">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
 
     <div class="position-relative text-center">
         <h3 class="mb-4 mbr-fonts-style display-2">
-            <strong>What Our Fantastic Users Say</strong>
+            <strong>Our Services</strong>
         </h3>
 
         <div class="embla" data-skip-snaps="true" data-align="center" data-auto-play-interval="5" data-draggable="true">
@@ -161,7 +161,9 @@
                                 </p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
-                                <strong>Alexa</strong>
+                                <a href="/">
+                                    <strong>Alexa</strong> 
+                                </a> 
                             </div>
                             <div class="user_desk mbr-fonts-style display-7">
                                 DESIGNER
@@ -275,7 +277,7 @@
                 <strong>Contacts</strong>
             </h3>
             <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">
-                Contacts Subtitle
+                You can reach us through the below channels. 
             </h4>
         </div>
         <div class="row justify-content-center mt-4">

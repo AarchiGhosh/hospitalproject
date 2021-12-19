@@ -5,7 +5,8 @@
 {% block content %}
 
 <br><br>
-  {% if form.non_field_errors %}
+  <div class="container justify-content-center">
+    {% if form.non_field_errors %}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       {% for error in form.non_field_errors %}
         <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
@@ -15,17 +16,20 @@
       </button>
     </div>
   {% endif %}
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-lg-4 col-md-6 col-sm-8 col-12">
-      <h2>Log in</h2>
+      <h1><strong>Log in</strong><strong></strong></h1>
       <form method="post" novalidate>
         {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}">
+        <input type="hidden" name="next" value="{% url 'patient_list' %}">
         {{ form.username|as_crispy_field }}
+        <br>
         {{ form.password|as_crispy_field }}
+        <br>
         <button type="submit" class="btn btn-primary">Log in</button>
       </form>
     </div>
+  </div>
   </div>
   <br><br>
 {% endblock %}

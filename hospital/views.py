@@ -1,14 +1,23 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import login
-from hospital.models import User
+from hospital.models import User,Patient
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView, UpdateView
 from hospital.forms import PatientSignUpForm, DoctorSignUpForm
+from hospital.decorators import doctor_required
 
 def index(request):
-    return render(request, 'hospital/base.html')
+    header="Hospital Administration"
+    return render(request, 'hospital/index.html', {'header': header})
+
+def contact(request):
+    return render(request, 'hospital/contact.html')
+
+def about(request):
+    return render(request, 'hospital/about.html')
+
 
 class PatientSignUpView(CreateView):
     model = User
