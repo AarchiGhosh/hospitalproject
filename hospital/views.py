@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import login
-from hospital.models import User,Patient
+from hospital.models import Bed, Service, User,Patient
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView, UpdateView
@@ -9,7 +9,7 @@ from hospital.forms import PatientSignUpForm, DoctorSignUpForm
 from hospital.decorators import doctor_required
 
 def index(request):
-    header="Hospital Administration"
+    header="Patient Tracking System"
     return render(request, 'hospital/index.html', {'header': header})
 
 def contact(request):
@@ -57,4 +57,35 @@ class PatientListView(ListView):
     def get_queryset(self):
         doctor = self.request.user.doctor
         queryset = Patient.objects.filter(doctor=doctor)
+        return queryset
+
+
+class AvailableServiceListView(ListView):
+    model = Service
+    ordering = ('service_name', )
+    context_object_name = 'services'
+    template_name = 'hospital/aservice_list.html'
+
+    def get_queryset(self):   
+        queryset = Service.objects.filter(is_available=True)
+        return queryset
+
+class CriticalServiceListView(ListView):
+    model = Service
+    ordering = ('service_name', )
+    context_object_name = 'services'
+    template_name = 'hospital/cservice_list.html'
+
+    def get_queryset(self):   
+        queryset = Service.objects.filter(is_critical=True)
+        return queryset
+
+class BedListView(ListView):
+    model = Bed
+    ordering = ('bed_number', )
+    context_object_name = 'beds'
+    template_name = 'hospital/bed_list.html'
+
+    def get_queryset(self):   
+        queryset = Bed.objects.filter(is_available=True)
         return queryset

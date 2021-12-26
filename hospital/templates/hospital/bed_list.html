@@ -1,0 +1,24 @@
+{% extends 'hospital/layout.html' %}
+
+{% block content %}
+<br><br>
+<table class="table table-hover">
+    <caption>Total:{{ beds|length }} </caption> 
+    <thead>
+      <tr>
+        <th scope="col">Bed Number</th>
+        <th scope="col">Department</th>
+        <th scope="col">Bed Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bed in beds %}
+      <tr>
+        <td>{{ bed.bed_number }}</td>
+        <td>{{ bed.department }}</td>
+        <td>{{ bed.is_normal|yesno:"Normal,ICU" }}</td>
+      </tr>
+      {% endfor %}
+</table>
+<br><br>
+{% endblock %}

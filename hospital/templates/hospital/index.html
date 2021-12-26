@@ -10,7 +10,7 @@
   <meta name="description" content="">
   
   
-  <title>Home</title>
+  <title>PTS</title>
   <link rel="stylesheet" type="text/css" href="{% static 'assets/web/assets/mobirise-icons2/mobirise2.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'hospital/css/bootstrap.min.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'assets/dropdown/css/style.css' %}" />
@@ -36,7 +36,7 @@
                         <img src="{% static 'assets/images/hospital.png' %}" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="https://mobiri.se">HAS</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="https://mobiri.se">PTS</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -50,7 +50,7 @@
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'about' %}">
                             About us</a></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">
-                            Services</a></li>
+                            Features</a></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'contact' %}">Contacts</a>
                     </li></ul>
                 
@@ -69,7 +69,7 @@
     <div class="align-center container">
         <div class="row justify-content-end">
             <div class="col-12 col-lg-6">
-                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>{{ header }}</strong><br><strong>System</strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>{{ header }}</strong><br><strong> </strong></h1>
                 
                 <p class="mbr-text mbr-fonts-style display-5">Your Health, Our Responsibilty.</p>
                 
@@ -93,10 +93,10 @@
                                 <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">
                                     For New Patients</h6>
                                 <h5 class="card-title mbr-fonts-style display-5">
-                                    <strong>Patient Regristration</strong></h5>
-                                <p class="mbr-text mbr-fonts-style mb-5 display-4">You don't have to code when you create your own site. Select one of available themes in the Mobirise sitebuilder.</p>
+                                    <strong>Patient Registration</strong></h5>
+                                <p class="mbr-text mbr-fonts-style mb-5 display-4">The staff members can add new patients through the below link. They can also add the patient's detials also.</p>
                                 <div class="mbr-section-btn">
-                                    <a href="{% url 'patient_signup' %}" class="btn btn-warning display-4">Learn more</a>
+                                    <a href="{% url 'patient_signup' %}" class="btn btn-warning display-4">Sign Up</a>
                                 </div>
                             </div>
                         </div>
@@ -113,12 +113,12 @@
                     <div class="row">
                         <div class="col-12 col-md-7">
                             <div class="text-wrapper">
-                                <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">For registered Users</h6>
+                                <h6 class="card-subtitle mbr-fonts-style mb-2 display-4">For Doctors</h6>
                                 <h5 class="card-title mbr-fonts-style display-5">
                                     <strong>Patient Information</strong></h5>
-                                <p class="mbr-text mbr-fonts-style mb-5 display-4">Select the theme that suits you. Each theme in the Mobirise website building software contains a set of unique blocks.</p>
+                                <p class="mbr-text mbr-fonts-style mb-5 display-4">Doctor's can view the patient details through the below link.</p>
                                 <div class="mbr-section-btn">
-                                    <a href="{% url 'login' %}" class="btn btn-warning display-4">Learn more</a>
+                                    <a href="{% url 'login' %}" class="btn btn-warning display-4">Log In</a>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
 
     <div class="position-relative text-center">
         <h3 class="mb-4 mbr-fonts-style display-2">
-            <strong>Our Services</strong>
+            <strong>Features</strong>
         </h3>
 
         <div class="embla" data-skip-snaps="true" data-align="center" data-auto-play-interval="5" data-draggable="true">
@@ -152,64 +152,40 @@
                         <div class="user">
                             <div class="user_image">
                                 <div class="item-wrapper position-relative">
-                                    <img src="{% static 'assets/images/team3.jpg' %}">
+                                    <img src="{% static 'assets/images/services.jpg' %}">
                                 </div>
                             </div>
                             <div class="user_text mb-4">
                                 <p class="mbr-fonts-style display-7">
-                                    Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.
+                                    All the Services available today, both Critical and Regular will be visible.
                                 </p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
                                 <a href="/">
-                                    <strong>Alexa</strong> 
+                                    <strong>SERVICES AVAILABLE TODAY</strong> 
                                 </a> 
                             </div>
-                            <div class="user_desk mbr-fonts-style display-7">
-                                DESIGNER
-                            </div>
+                           
                         </div>
                     </div>
                     <div class="embla__slide slider-image item" style="margin-left: 7rem; margin-right: 7rem;">
                         <div class="user">
                             <div class="user_image">
                                 <div class="item-wrapper position-relative">
-                                    <img src="{% static 'assets/images/team2.jpg' %}">
+                                    <img src="{% static 'assets/images/beds.jpg' %}">
                                 </div>
                             </div>
                             <div class="user_text mb-4">
                                 <p class="mbr-fonts-style display-7">
-                                    Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.
+                                    Total beds available will be visible in each department along with their bed numbers for easier allocation.
                                 </p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
-                                <strong>Linda</strong>
-                            </div>
-                            <div class="user_desk mbr-fonts-style display-7">
-                                DEVELOPER
+                                <strong>BEDS AVAILABLE</strong>
                             </div>
                         </div>
                     </div>
-                    <div class="embla__slide slider-image item" style="margin-left: 7rem; margin-right: 7rem;">
-                        <div class="user">
-                            <div class="user_image">
-                                <div class="item-wrapper position-relative">
-                                    <img src="{% static 'assets/images/team1.jpg' %}">
-                                </div>
-                            </div>
-                            <div class="user_text mb-4">
-                                <p class="mbr-fonts-style display-7">
-                                    Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.
-                                </p>
-                            </div>
-                            <div class="user_name mbr-fonts-style mb-2 display-7">
-                                <strong>Herbert</strong>
-                            </div>
-                            <div class="user_desk mbr-fonts-style display-7">
-                                DEVELOPER
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <button class="embla__button embla__button--prev">

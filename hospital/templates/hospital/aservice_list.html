@@ -1,0 +1,23 @@
+{% extends 'hospital/layout.html' %}
+
+{% block content %}
+<br><br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Service Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Critical</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in services %}
+      <tr>
+        <td>{{ service.service_name }}</td>
+        <td>{{ service.department }}</td>
+        <td>{{ service.is_critical|yesno:"Yes,No" }}</td>
+      </tr>
+      {% endfor %}
+</table>
+<br><br>
+{% endblock %}

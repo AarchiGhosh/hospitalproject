@@ -27,6 +27,27 @@ class Patient(models.Model):
     def __str__(self):
         return f"{self.user.username}"
 
-class Availability(models.Model):
-    date = models.DateField()
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+class Service(models.Model):
+    service_name = models.CharField(max_length=30)
+    is_available = models.BooleanField(default=True)
+    department = models.CharField(max_length=30)
+    is_critical = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.service_name
+
+
+class Bed(models.Model):
+    bed_number = models.IntegerField(primary_key=True)
+    is_available = models.BooleanField(default=True)
+    department = models.CharField(max_length=30)
+    is_normal = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.department} bed"
+
+
+
+
+
+    
