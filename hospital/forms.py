@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from hospital.models import Doctor, Patient, User
 
+
 class DoctorSignUpForm(UserCreationForm):
     specialisation = forms.CharField(max_length=10)
     department = forms.CharField(max_length=20)
@@ -26,6 +27,13 @@ class PatientSignUpForm(UserCreationForm):
         queryset=Doctor.objects.all(),
         required=True
     )
+
+    blood_group = forms.CharField(max_length=4)
+    height_in_cm = forms.IntegerField()
+    weight_in_kg = forms.IntegerField()
+    age = forms.IntegerField()
+    gender = forms.ChoiceField(choices=(('M','Male'),('F','Female'),('O','Other')))
+    diagnosis = forms.CharField(max_length=200)
 
     class Meta(UserCreationForm.Meta):
         model = User

@@ -18,6 +18,8 @@ def contact(request):
 def about(request):
     return render(request, 'hospital/about.html')
 
+def features(request):
+    return render(request, 'hospital/features.html')
 
 class PatientSignUpView(CreateView):
     model = User
@@ -88,4 +90,14 @@ class BedListView(ListView):
 
     def get_queryset(self):   
         queryset = Bed.objects.filter(is_available=True)
+        return queryset
+
+class ServiceListView(ListView):
+    model = Service
+    ordering = ('service_name', )
+    context_object_name = 'services'
+    template_name = 'hospital/service_list.html'
+
+    def get_queryset(self):   
+        queryset = Service.objects.all()
         return queryset

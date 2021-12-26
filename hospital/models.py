@@ -21,6 +21,8 @@ class Patient(models.Model):
     blood_group = models.CharField(max_length=4)
     height_in_cm = models.IntegerField(default=160)
     weight_in_kg = models.IntegerField(default=50)
+    age = models.IntegerField(default=18)
+    gender = models.CharField(max_length=2,null=True)
     diagnosis = models.CharField(max_length=200)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 
